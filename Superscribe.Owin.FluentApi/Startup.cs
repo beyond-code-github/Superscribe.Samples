@@ -1,10 +1,6 @@
 ﻿namespace Superscribe.Samples.FluentApi
 {
-    using System.IO;
-
     using global::Owin;
-
-    using Newtonsoft.Json;
 
     using Superscribe.Models;
     using Superscribe.Owin;
@@ -22,8 +18,8 @@
                         Write = (env, o) => env.WriteResponse(o.ToString())
                     });
 
-            app.UseSuperscribe(config)
-                .Use(typeof(OwinHandler), config);
+            app.UseSuperscribeRouter(config)
+                .UseSuperscribeHandler(config);
 
             // Set up a route that will respond only to even numbers using the fluent api
 

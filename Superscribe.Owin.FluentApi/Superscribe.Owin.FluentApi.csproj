@@ -53,13 +53,11 @@
     <Reference Include="Owin">
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe, Version=0.2.3.33561, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Superscribe.0.3.0-pre7\lib\net40\Superscribe.dll</HintPath>
+    <Reference Include="Superscribe">
+      <HintPath>..\packages\Superscribe.0.3.0-pre11\lib\net40\Superscribe.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe.Owin, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Superscribe.Owin.0.3.0-pre11\lib\net45\Superscribe.Owin.dll</HintPath>
+    <Reference Include="Superscribe.Owin">
+      <HintPath>..\packages\Superscribe.Owin.0.3.0-pre16\lib\net45\Superscribe.Owin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

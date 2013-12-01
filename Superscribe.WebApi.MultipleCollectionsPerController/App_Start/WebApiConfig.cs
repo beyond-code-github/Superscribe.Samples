@@ -13,9 +13,8 @@
 
             SuperscribeConfig.Register(config);
 
-            ʃ.Route(ʅ => "api" / "Blogs".Controller() / (
-                  ʅ / -(ʃInt)"id"
-                | ʅ["GET"] / (
+            ʃ.Route(ʅ => "api" / "Blogs".Controller() / -(ʃInt)"id" / (
+                ʅ["GET"] / (
                       ʅ / "Posts".Action("GetBlogPosts")
                     | ʅ / "Tags".Action("GetBlogTags"))
                 | ʅ["POST"] / (
