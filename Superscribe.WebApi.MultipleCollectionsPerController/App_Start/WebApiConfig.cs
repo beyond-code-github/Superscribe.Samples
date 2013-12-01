@@ -13,13 +13,13 @@
 
             SuperscribeConfig.Register(config);
 
-            ʃ.Route(ʅ => "api" / "Blogs".Controller() / -(ʃInt)"id" / (
+            ʃ.Route(ʅ => "api" / "Blogs".Controller() / -(ʃInt)"blogid" / (
                 ʅ["GET"] / (
                       ʅ / "Posts".Action("GetBlogPosts")
                     | ʅ / "Tags".Action("GetBlogTags"))
                 | ʅ["POST"] / (
-                      ʅ / "Posts".Action("PostBlogPost") / (ʃInt)"id" 
-                    | ʅ / "Tags".Action("PostBlogTag") / (ʃInt)"id")));
+                      ʅ / "Posts".Action("PostBlogPost")
+                    | ʅ / "Tags".Action("PostBlogTag"))));
             
         }
     }

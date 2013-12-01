@@ -20,7 +20,7 @@
 
             app.UseSuperscribeRouter(new SuperscribeOwinConfig());
 
-            // Set up a route that will respond only to even numbers using the fluent api
+            // Set up a route that will forward requests to either web api or nancy
             ʃ.Route(ʅ => ʅ / "api" / (
                   ʅ / "webapi" * Pipeline.Action(o => o.UseWebApi(httpconfig))
                 | ʅ / "nancy" * Pipeline.Action(o => o.UseNancy())));

@@ -8,8 +8,8 @@
         {
             return "Get";
         }
-        
-        public string GetById(int id)
+
+        public string GetById(int blogid)
         {
             return "GetById";
         }
@@ -29,14 +29,14 @@
             return "Blog Tags - " + query;
         }
 
-        public string PostBlogPosts()
+        public string PostBlogPost(int blogid)
         {
-            return "Post Blog Posts";
+            return "Post to blog " + blogid;
         }
 
-        public string PostBlogTags()
+        public string PostBlogTag(int blogid)
         {
-            return "Post Blog Tags";
+            return "Tag blog " + blogid;
         }
     }
 }
