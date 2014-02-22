@@ -1,4 +1,4 @@
-﻿namespace Superscribe.WebApi2.MultipleCollectionsPerController.Controllers
+﻿namespace Superscribe.WebApi.MultipleCollectionsPerController.Controllers
 {
     using System.Web.Http;
 

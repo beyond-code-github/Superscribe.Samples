@@ -1,19 +1,15 @@
-﻿namespace Superscribe.WebApi2.MultipleCollectionsPerController
+﻿namespace Superscribe.WebApi.MultipleCollectionsPerController
 {
+    using System.Web;
     using System.Web.Http;
-    using System.Web.Mvc;
-    using System.Web.Routing;
 
-    using Superscribe.WebApi2.MultipleCollectionsPerController.App_Start;
+    using Superscribe.WebApi.MultipleCollectionsPerController.App_Start;
 
-    public class WebApiApplication : System.Web.HttpApplication
+    public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

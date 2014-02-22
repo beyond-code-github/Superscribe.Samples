@@ -7,15 +7,16 @@
     using Newtonsoft.Json;
 
     using Superscribe.Owin;
+    using Superscribe.Owin.Engine;
     using Superscribe.Owin.Extensions;
 
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
-            var config = new SuperscribeOwinConfig();
-            config.MediaTypeHandlers.Add("text/html", new MediaTypeHandler { Write = (env, o) => env.WriteResponse(o.ToString()) });
-            config.MediaTypeHandlers.Add("application/json", new MediaTypeHandler {
+            var options = new SuperscribeOwinOptions();
+            options.MediaTypeHandlers.Add("application/json", new MediaTypeHandler
+            {
                    Write = (env, o) => env.WriteResponse(JsonConvert.SerializeObject(o)),
                    Read = (env, type) =>
                    {
@@ -29,8 +30,10 @@
                    }
                });
 
-            app.UseSuperscribeRouter(config)
-                .UseSuperscribeHandler(config);
+            var engine = OwinRouteEngineFactory.Create(options);
+
+            app.UseSuperscribeRouter(engine)
+                .UseSuperscribeHandler(engine);
         }
     }
 }

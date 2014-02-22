@@ -1,9 +1,8 @@
-﻿namespace Superscribe.WebApi2.MultipleCollectionsPerController.App_Start
+﻿namespace Superscribe.WebApi.MultipleCollectionsPerController.App_Start
 {
     using System.Web.Http;
 
     using Superscribe.Models;
-    using Superscribe.WebApi;
 
     public static class WebApiConfig
     {
@@ -11,16 +10,15 @@
         {
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-            SuperscribeConfig.Register(config);
+            var define = SuperscribeConfig.Register(config);
 
-            ʃ.Route(ʅ => "api" / "Blogs".Controller() / -(ʃInt)"blogid" / (
-                ʅ["GET"] / (
-                      ʅ / "Posts".Action("GetBlogPosts")
-                    | ʅ / "Tags".Action("GetBlogTags"))
-                | ʅ["POST"] / (
-                      ʅ / "Posts".Action("PostBlogPost")
-                    | ʅ / "Tags".Action("PostBlogTag"))));
-            
+            var blogs = define.Route(r => r / "api" / "Blogs".Controller() / -(Int)"blogid");
+
+            define.Get(blogs / "Posts".Action("GetBlogPosts"));
+            define.Get(blogs / "Tags".Action("GetBlogTags"));
+
+            define.Post(blogs / "Posts".Action("PostBlogPost"));
+            define.Post(blogs / "Tags".Action("PostBlogTag"));
         }
     }
 }

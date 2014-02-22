@@ -2,48 +2,40 @@
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+    using Superscribe.Engine;
     using Superscribe.Models;
-    using Superscribe.Utils;
 
     [TestClass]
     public class SuperscribeUnitTests
     {
-        private RouteWalker<RouteData> routeWalker;
+        private IRouteEngine define;
             
         [TestInitialize]
         public void Setup()
         {
-            routeWalker = new RouteWalker<RouteData>(ʃ.Base);
+            define = RouteEngineFactory.Create();
 
-            ʃ.Route(ʅ => 
-                ʅ / "Hello" / (
-                    ʅ / "World"         * (o => "Hello World!")
-                  | ʅ / (ʃString)"Name" * (o => "Hello " + o.Parameters.Name)));
-        }
-
-        [TestCleanup]
-        public void Cleanup()
-        {
-            ʃ.Reset();
+            define.Route(r => r / "Hello" / "World", o => "Hello World!");
+            define.Route(r => r / "Hello" / (String)"Name", o => "Hello " + o.Parameters.Name);
         }
         
         [TestMethod]
         public void Test_Hello_World_Get()
         {
-            var routeData = new RouteData();
-            routeWalker.WalkRoute("/Hello/World", "Get", routeData);
+            var routeWalker = define.Walker();
+            var data = routeWalker.WalkRoute("/Hello/World", "Get", new RouteData());
 
-            Assert.AreEqual("Hello World!", routeData.Response);
+            Assert.AreEqual("Hello World!", data.Response);
         }
 
         [TestMethod]
         public void Test_Hello_Name_Get()
         {
-            var routeData = new RouteData();
-            routeWalker.WalkRoute("/Hello/Kathryn", "Get", routeData);
+            var routeWalker = define.Walker();
+            var data = routeWalker.WalkRoute("/Hello/Kathryn", "Get", new RouteData());
 
-            Assert.AreEqual("Kathryn", routeData.Parameters.Name);
-            Assert.AreEqual("Hello Kathryn", routeData.Response);
+            Assert.AreEqual("Kathryn", data.Parameters.Name);
+            Assert.AreEqual("Hello Kathryn", data.Response);
         }
     }
 }

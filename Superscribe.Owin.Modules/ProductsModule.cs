@@ -21,10 +21,10 @@
         {
             this.Get["Products"] = o => products;
 
-            this.Get["Products" / (ʃInt)"Id"] = o => 
+            this.Get["Products" / (Int)"Id"] = o => 
                 products.FirstOrDefault(p => o.Parameters.Id == p.Id);
 
-            this.Get["Products" / (ʃString)"Category"] = o => 
+            this.Get["Products" / (String)"Category"] = o => 
                 products.Where(p => o.Parameters.Category == p.Category);
 
             this.Post["Products"] = o =>

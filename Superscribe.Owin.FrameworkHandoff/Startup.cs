@@ -4,8 +4,8 @@
 
     using global::Owin;
 
-    using Superscribe.Owin;
-    using Superscribe.Owin.Pipelining;
+    using Superscribe.Owin.Engine;
+    using Superscribe.Owin.Extensions;
 
     public class Startup
     {
@@ -18,12 +18,13 @@
                 defaults: new { controller = "Hello" }
             );
 
-            app.UseSuperscribeRouter(new SuperscribeOwinConfig());
+            var define = OwinRouteEngineFactory.Create();
 
             // Set up a route that will forward requests to either web api or nancy
-            ʃ.Route(ʅ => ʅ / "api" / (
-                  ʅ / "webapi" * Pipeline.Action(o => o.UseWebApi(httpconfig))
-                | ʅ / "nancy" * Pipeline.Action(o => o.UseNancy())));
+            define.Pipeline("api/webapi").UseWebApi(httpconfig);
+            define.Pipeline("api/nancy").UseNancy();
+            
+            app.UseSuperscribeRouter(define);
         }
     }
 }

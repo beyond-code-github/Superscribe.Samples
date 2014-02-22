@@ -6,9 +6,10 @@
 
     using global::Owin;
 
-    using Superscribe.Models;
-    using Superscribe.Owin;
+    using Superscribe.Owin.Engine;
     using Superscribe.Owin.Extensions;
+
+    using String = Superscribe.Models.String;
 
     public class AddName
     {
@@ -35,16 +36,13 @@
     {
         public void Configuration(IAppBuilder app)
         {
-            var config = new SuperscribeOwinConfig();
-            config.MediaTypeHandlers.Add(
-                "text/html",
-                new MediaTypeHandler { Write = (env, o) => env.WriteResponse(o.ToString()) });
+            var define = OwinRouteEngineFactory.Create();
 
-            app.UseSuperscribeRouter(config)
+            app.UseSuperscribeRouter(define)
                 .Use(typeof(AddName))
-                .UseSuperscribeHandler(config);
-
-            ʃ.Route(ʅ => ʅ / "Hello" / (ʃString)"Name" * (o => "Hello"));
+                .UseSuperscribeHandler(define);
+            
+            define.Route(r => r / "Hello" / (String)"Name" * (o => "Hello"));
         }
     }
 }

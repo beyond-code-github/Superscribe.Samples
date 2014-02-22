@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.Owin.FluentApi", "Superscribe.Owin.FluentApi\Superscribe.Owin.FluentApi.csproj", "{BF7DE7D7-F4DB-45EA-BE27-D8FE576BBE08}"
 EndProject
@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.Owin.Parameters
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.UnitTesting", "Superscribe.UnitTesting\Superscribe.UnitTesting.csproj", "{55FAE778-D891-462F-824F-DDE9DEDF0EE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApi.MultipleCollectionsPerController", "Superscribe.WebApi.MultipleCollectionsPerController\Superscribe.WebApi.MultipleCollectionsPerController.csproj", "{ECBCF52A-8B97-4950-8A21-D24FDAD3D2AB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.Owin.FrameworkHandoff", "Superscribe.Owin.FrameworkHandoff\Superscribe.Owin.FrameworkHandoff.csproj", "{04B01E7A-7271-4027-A673-1EAFC6BEEE3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.Owin.Pipelining", "Superscribe.Owin.Pipelining\Superscribe.Owin.Pipelining.csproj", "{2E84CDF2-49F2-42D7-AE59-9F8E54789BA9}"
@@ -25,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{694B1B
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApi.MultipleCollectionsPerController", "Superscribe.WebApi.MultipleCollectionsPerController\Superscribe.WebApi.MultipleCollectionsPerController.csproj", "{25C24631-10B7-4A25-974F-49F02712EF4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApiOnOwin", "Superscribe.WebApi.Owin\Superscribe.WebApiOnOwin.csproj", "{3F628D49-9617-49C8-A4CC-9357032B19F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,10 +54,6 @@ Global
 		{55FAE778-D891-462F-824F-DDE9DEDF0EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55FAE778-D891-462F-824F-DDE9DEDF0EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55FAE778-D891-462F-824F-DDE9DEDF0EE3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECBCF52A-8B97-4950-8A21-D24FDAD3D2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECBCF52A-8B97-4950-8A21-D24FDAD3D2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ECBCF52A-8B97-4950-8A21-D24FDAD3D2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ECBCF52A-8B97-4950-8A21-D24FDAD3D2AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04B01E7A-7271-4027-A673-1EAFC6BEEE3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04B01E7A-7271-4027-A673-1EAFC6BEEE3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04B01E7A-7271-4027-A673-1EAFC6BEEE3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,6 +62,14 @@ Global
 		{2E84CDF2-49F2-42D7-AE59-9F8E54789BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E84CDF2-49F2-42D7-AE59-9F8E54789BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E84CDF2-49F2-42D7-AE59-9F8E54789BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25C24631-10B7-4A25-974F-49F02712EF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C24631-10B7-4A25-974F-49F02712EF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C24631-10B7-4A25-974F-49F02712EF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C24631-10B7-4A25-974F-49F02712EF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F628D49-9617-49C8-A4CC-9357032B19F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F628D49-9617-49C8-A4CC-9357032B19F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F628D49-9617-49C8-A4CC-9357032B19F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F628D49-9617-49C8-A4CC-9357032B19F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

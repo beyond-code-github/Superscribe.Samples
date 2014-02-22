@@ -6,6 +6,7 @@
 
     using global::Owin;
 
+    using Superscribe.Owin.Engine;
     using Superscribe.Owin.Extensions;
 
     public class PadResponse
@@ -32,39 +33,35 @@
     {
         public void Configuration(IAppBuilder app)
         {
-            var config = new SuperscribeOwinConfig();
-            config.MediaTypeHandlers.Add(
-                "text/html",
-                new MediaTypeHandler { Write = (env, o) => env.WriteResponse(o.ToString()) });
+            var define = OwinRouteEngineFactory.Create();
 
             // Regular Owin pipeline example:
 
-            app.UseSuperscribeRouter(config)
-                .Use(typeof(PadResponse), "h1")
-                .UseSuperscribeHandler(config);
+            //app.UseSuperscribeRouter(define)
+            //    .Use(typeof(PadResponse), "h1")
+            //    .UseSuperscribeHandler(define);
 
-            ʃ.Route(ʅ => ʅ / "Hello" / "World" * (o => "Hello World"));
+            //define.Route("Hello/World", o => "Hello World");
 
 
             // Basic superscribe pipelining example
 
-            //app.UseSuperscribeRouter(config)
-            //  .UseSuperscribeHandler(config);
+            //app.UseSuperscribeRouter(define)
+            //  .UseSuperscribeHandler(define);
 
-            //ʃ.Route(ʅ => ʅ / "Hello" * Pipeline.Action<PadResponse>("h1") 
-            //                    / "World" * (o => "Hello World"));
-
-
+            //define.Pipeline("Hello").Use(typeof(PadResponse), "h1");
+            //define.Route("Hello/World", o => "Hello World");
+            
             // Advanced superscribe pipelining example
 
-            //app.UseSuperscribeRouter(config)
-            //  .UseSuperscribeHandler(config);
+            app.UseSuperscribeRouter(define)
+              .UseSuperscribeHandler(define);
 
-            //ʃ.Route(ʅ => ʅ / "Hello" * Pipeline.Action<PadResponse>("h1") 
-            //                    / "World" * (o => "Hello World"));
-
-            //ʃ.Route(ʅ => ʅ / "Mad" * Pipeline.Action<PadResponse>("marquee") 
-            //                    / "World" * (o => "Hello World"));
+            define.Pipeline("Hello").Use(typeof(PadResponse), "h1");
+            define.Pipeline("Goodbye").Use(typeof(PadResponse), "marquee");
+            
+            define.Route("Hello/World", o => "Hello World");
+            define.Route("Goodbye/World", o => "Goodbye World");
         }
     }
 }
