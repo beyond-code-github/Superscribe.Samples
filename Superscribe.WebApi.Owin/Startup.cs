@@ -28,7 +28,8 @@
             define.Route("values".Controller());
             
             app.UseSuperscribeRouter(define)
-                .UseWebApiWithSuperscribe(httpconfig, define);
+                .UseWebApi(httpconfig)
+                .WithSuperscribe(httpconfig, define);
         }
     }
 }

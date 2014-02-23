@@ -42,7 +42,7 @@
                 .Use(typeof(AddName))
                 .UseSuperscribeHandler(define);
             
-            define.Route(r => r / "Hello" / (String)"Name" * (o => "Hello"));
+            define.Route(r => r / "Hello" / (String)"Name", o => "Hello");
         }
     }
 }
