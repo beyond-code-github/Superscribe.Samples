@@ -15,14 +15,7 @@
         {
             var define = OwinRouteEngineFactory.Create();
             var httpconfig = new HttpConfiguration();
-
-            httpconfig.Formatters.Remove(httpconfig.Formatters.XmlFormatter);
-            httpconfig.MapHttpAttributeRoutes();
-            httpconfig.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { controller = "values", id = RouteParameter.Optional });
-
+            
             SuperscribeConfig.RegisterModules(httpconfig, define);
 
             define.Route("values".Controller());

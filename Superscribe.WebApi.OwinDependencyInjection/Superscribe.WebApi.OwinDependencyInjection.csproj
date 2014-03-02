@@ -78,21 +78,21 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Owin.Context.0.1.0.3\lib\net45\Owin.Context.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe, Version=0.4.0.8, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Superscribe, Version=0.4.4.15, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Superscribe.0.4.0.8\lib\net40\Superscribe.dll</HintPath>
+      <HintPath>..\packages\Superscribe.0.4.4.15\lib\net40\Superscribe.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe.Owin, Version=0.4.0.8, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Superscribe.Owin, Version=0.4.3.14, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Superscribe.Owin.0.4.0.8\lib\net45\Superscribe.Owin.dll</HintPath>
+      <HintPath>..\packages\Superscribe.Owin.0.4.3.14\lib\net45\Superscribe.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe.WebApi.Owin, Version=0.1.0.4, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Superscribe.WebApi.Owin, Version=0.1.0.9, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Superscribe.WebApi.Owin.0.1.0.4\lib\net45\Superscribe.WebApi.Owin.dll</HintPath>
+      <HintPath>..\packages\Superscribe.WebApi.Owin.0.1.0.9\lib\net45\Superscribe.WebApi.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Superscribe.WebApi2, Version=0.4.0.32418, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Superscribe.WebApi2, Version=0.4.3.15, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Bin\Superscribe.WebApi2.dll</HintPath>
+      <HintPath>..\packages\Superscribe.WebApi2.0.4.3.15\lib\net45\Superscribe.WebApi2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />

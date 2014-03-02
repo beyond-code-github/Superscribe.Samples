@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApiOnOwin", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApi.OwinDependencyInjection", "Superscribe.WebApi.OwinDependencyInjection\Superscribe.WebApi.OwinDependencyInjection.csproj", "{483AD44F-72C2-4ADA-B7FB-C1B785A1B890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Superscribe.WebApi.Basic", "Superscribe.WebApi.Basic\Superscribe.WebApi.Basic.csproj", "{5BE37885-8D15-4B39-B6AD-A7E22FFE4B75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{483AD44F-72C2-4ADA-B7FB-C1B785A1B890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{483AD44F-72C2-4ADA-B7FB-C1B785A1B890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{483AD44F-72C2-4ADA-B7FB-C1B785A1B890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE37885-8D15-4B39-B6AD-A7E22FFE4B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE37885-8D15-4B39-B6AD-A7E22FFE4B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE37885-8D15-4B39-B6AD-A7E22FFE4B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE37885-8D15-4B39-B6AD-A7E22FFE4B75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

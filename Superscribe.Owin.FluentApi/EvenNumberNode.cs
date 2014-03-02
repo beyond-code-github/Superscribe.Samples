@@ -15,12 +15,12 @@
                 return false;
             };
 
-            this.actionFunction = (routeData, value) =>
+            this.ActionFunctions.Add("Set_" + name, (routeData, value) =>
             {
                 int parsed;
                 if (int.TryParse(value, out parsed))
                     routeData.Parameters.Add(name, parsed);
-            };
+            });
         }
     }
 }

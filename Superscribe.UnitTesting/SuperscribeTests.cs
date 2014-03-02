@@ -15,8 +15,8 @@
         {
             define = RouteEngineFactory.Create();
 
-            define.Route(r => r / "Hello" / "World", o => "Hello World!");
-            define.Route(r => r / "Hello" / (String)"Name", o => "Hello " + o.Parameters.Name);
+            define.Route("Hello/World", o => "Hello World!");
+            define.Route("Hello" / (String)"Name", o => "Hello " + o.Parameters.Name);
         }
         
         [TestMethod]

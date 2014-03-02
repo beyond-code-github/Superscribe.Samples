@@ -23,10 +23,11 @@
             var engine = OwinRouteEngineFactory.Create();
 
             var httpconfig = new HttpConfiguration();
+            httpconfig.Formatters.Remove(httpconfig.Formatters.XmlFormatter);
             SuperscribeConfig.Register(httpconfig, engine);
 
-            engine.Route(r => r / "Values".Controller());
-            engine.Route(r => r / "Api" / "Values".Controller());
+            engine.Route("Values".Controller());
+            engine.Route("Api" / "Values".Controller());
 
             engine.Pipeline("Api").Use<ApiDependencies>();
 

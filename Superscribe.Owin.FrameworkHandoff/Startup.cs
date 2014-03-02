@@ -12,11 +12,7 @@
         public void Configuration(IAppBuilder app)
         {
             var httpconfig = new HttpConfiguration();
-            httpconfig.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/webapi/",
-                defaults: new { controller = "Hello" }
-            );
+            httpconfig.Routes.MapHttpRoute("DefaultApi", "api/webapi/", new { controller = "Hello" });
 
             var define = OwinRouteEngineFactory.Create();
 

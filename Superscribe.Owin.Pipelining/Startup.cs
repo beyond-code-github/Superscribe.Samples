@@ -35,25 +35,6 @@
         {
             var define = OwinRouteEngineFactory.Create();
 
-            // Regular Owin pipeline example:
-
-            //app.UseSuperscribeRouter(define)
-            //    .Use(typeof(PadResponse), "h1")
-            //    .UseSuperscribeHandler(define);
-
-            //define.Route("Hello/World", o => "Hello World");
-
-
-            // Basic superscribe pipelining example
-
-            //app.UseSuperscribeRouter(define)
-            //  .UseSuperscribeHandler(define);
-
-            //define.Pipeline("Hello").Use(typeof(PadResponse), "h1");
-            //define.Route("Hello/World", o => "Hello World");
-            
-            // Advanced superscribe pipelining example
-
             app.UseSuperscribeRouter(define)
               .UseSuperscribeHandler(define);
 

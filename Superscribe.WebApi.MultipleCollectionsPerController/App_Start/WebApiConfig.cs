@@ -12,13 +12,13 @@
 
             var define = SuperscribeConfig.Register(config);
 
-            var blogs = define.Route(r => r / "api" / "Blogs".Controller() / -(Int)"blogid");
+            var blogs = define.Route("api" / "Blogs".Controller() / (Int)"blogid");
 
-            define.Get(blogs / "Posts".Action("GetBlogPosts"));
-            define.Get(blogs / "Tags".Action("GetBlogTags"));
+            define.Get(blogs / "Posts", To.Action("GetBlogPosts"));
+            define.Get(blogs / "Tags", To.Action("GetBlogTags"));
 
-            define.Post(blogs / "Posts".Action("PostBlogPost"));
-            define.Post(blogs / "Tags".Action("PostBlogTag"));
+            define.Post(blogs / "Posts", To.Action("PostBlogPost"));
+            define.Post(blogs / "Tags", To.Action("PostBlogTag"));
         }
     }
 }

@@ -15,6 +15,7 @@
         public void Configuration(IAppBuilder app)
         {
             var options = new SuperscribeOwinOptions();
+            options.MediaTypeHandlers.Remove("text/html");
             options.MediaTypeHandlers.Add("application/json", new MediaTypeHandler
             {
                    Write = (env, o) => env.WriteResponse(JsonConvert.SerializeObject(o)),
@@ -29,6 +30,9 @@
                        return obj;
                    }
                });
+
+            // Replace text/html with json handler so example works in a browser
+            options.MediaTypeHandlers.Add("text/html", options.MediaTypeHandlers["application/json"]);
 
             var engine = OwinRouteEngineFactory.Create(options);
 

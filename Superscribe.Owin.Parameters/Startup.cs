@@ -11,23 +11,21 @@
 
     using String = Superscribe.Models.String;
 
-    public class AddName
+    public class SayHello
     {
         private readonly Func<IDictionary<string, object>, Task> next;
 
-        public AddName(Func<IDictionary<string, object>, Task> next)
+        public SayHello(Func<IDictionary<string, object>, Task> next)
         {
             this.next = next;
         }
 
         public async Task Invoke(IDictionary<string, object> environment)
         {
-            await this.next(environment);
-
             var parameters = environment["route.Parameters"] as IDictionary<string, object>;
             if (parameters != null && parameters.ContainsKey("Name"))
             {
-                await environment.WriteResponse(" " + parameters["Name"]);    
+                await environment.WriteResponse("Hello " + parameters["Name"]);    
             }
         }
     }
@@ -38,11 +36,10 @@
         {
             var define = OwinRouteEngineFactory.Create();
 
+            define.Route("Hello" / (String)"Name", o => "Hello");
+
             app.UseSuperscribeRouter(define)
-                .Use(typeof(AddName))
-                .UseSuperscribeHandler(define);
-            
-            define.Route(r => r / "Hello" / (String)"Name", o => "Hello");
+                .Use<SayHello>();
         }
     }
 }
